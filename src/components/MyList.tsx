@@ -8,11 +8,13 @@ interface List {
 
 const MyList: FC<List> = ({ task }) => {
     return ( 
-        <div>
-            {
-                task.map((singleItem, key) => <MyItems key={key} task={singleItem.task} />)
-            }
-        </div>
+        <ul>
+            {task.map((singleItem, key) => (
+                <li key={key}>
+                <MyItems task={singleItem.task} />
+                </li>
+            ))}
+        </ul>
     );
 }
 

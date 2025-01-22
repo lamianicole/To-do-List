@@ -16,8 +16,7 @@ const AddItems: FC<AddItem> = ({ setItems }) => {
             task
         }
         const { error } = await supabase.from('todoTasks').insert(item)
-    if(error) console.log(error);
-
+        if(error) console.log(error);
         setItems((prev: Item[]) => { return [...prev, item] })
     }
     return ( 
